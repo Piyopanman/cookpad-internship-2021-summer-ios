@@ -2,11 +2,44 @@
 import SwiftUI
 
 struct ProductDetailPageView: View {
+    @State var isCartViewPresented: Bool = false
+    @EnvironmentObject var cartState: CartState
     var product: FetchProductsQuery.Data.Product
     var body: some View {
-        Text("Hello World")
+        VStack(){
+            RemoteImage(urlString: product.imageUrl)
+                .aspectRatio(contentMode: .fit)
+            //                .frame(maxWidth: .infinity)
+            Text(product.name)
+            Text("\(product.price)円")
+            Text(product.summary)
+            Button(action: { cartState.addToCart(product: product)}){
+                Text("カートに追加する")
+                    .frame(maxWidth: .infinity)
+                    .padding(8)
+                    .foregroundColor(Color.white)
+                    .background(Color.orange)
+                    .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+            }
+            .padding(8)
+            
+        }
             .navigationTitle(product.name)
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing){
+                    Button(action: {
+                        self.isCartViewPresented = true
+                    }) {
+                        VStack(){
+                            Image(systemName: "cart")
+                            Text("\(cartState.getCartItemCount())")
+                        }
+                    }
+                }
+            }
+        
     }
+    
 }
 
 struct ProductDetailPageView_Previews: PreviewProvider {
@@ -22,5 +55,6 @@ struct ProductDetailPageView_Previews: PreviewProvider {
                 )
             )
         }
+        .environmentObject(CartState())
     }
 }

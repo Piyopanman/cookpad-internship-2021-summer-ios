@@ -1,15 +1,10 @@
-//
-//  ProductListPageView.swift
-//  MiniMart
-//
-//  Created by Kakizaki Hinano on 2021/08/17.
-//
 
 import SwiftUI
 
 struct ProductListPageView: View {
     @State var products: [FetchProductsQuery.Data.Product] = []
     @State var isCartViewPresented: Bool = false
+    @EnvironmentObject var cartState: CartState
     var body: some View {
         List(products, id: \.id){ product in
             NavigationLink(destination: ProductDetailPageView(product: product)) {
@@ -46,7 +41,10 @@ struct ProductListPageView: View {
                 Button(action: {
                     self.isCartViewPresented = true
                 }) {
-                    Image(systemName: "folder")
+                    VStack(){
+                        Image(systemName: "cart")
+                        Text("\(cartState.getCartItemCount())")
+                    }
                 }
             }
         }
@@ -76,6 +74,10 @@ struct ProductListPageView_Previews: PreviewProvider {
         ),
     ]
     static var previews: some View {
-        ProductListPageView(products: products)
+        NavigationView{
+            ProductListPageView(products: products)
+        }
+        .environmentObject(CartState())
     }
+    
 }
