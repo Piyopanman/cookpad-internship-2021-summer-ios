@@ -26,14 +26,7 @@ struct ProductDetailPageView: View {
             .navigationTitle(product.name)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing){
-                    Button(action: {
-                        self.isCartViewPresented = true
-                    }) {
-                        VStack(){
-                            Image(systemName: "cart")
-                            Text("\(cartState.totalProductCounts)")
-                        }
-                    }
+                    CartButton()
                 }
             }
         

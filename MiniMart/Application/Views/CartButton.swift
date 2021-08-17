@@ -9,7 +9,7 @@ struct CartButton: View {
     var body: some View {
         Button(action: { self.isCartViewPresented = true }) {
             VStack {
-                Image(systemName: "folder")
+                Image(systemName: "cart")
                 // テキストで商品数を表示
                 // totalProductCountsはカートに入っている商品数の和を返す
                 Text("\(cartState.totalProductCounts)")
@@ -18,7 +18,7 @@ struct CartButton: View {
         .sheet(isPresented: $isCartViewPresented) {
             NavigationView {
                 // CartPageViewで注文完了後に画面を閉じるため
-               // CartPageView(isCartViewPresented: $isCartViewPresented)
+               CartPageView(isCartViewPresented: $isCartViewPresented)
             }
         }
     }
