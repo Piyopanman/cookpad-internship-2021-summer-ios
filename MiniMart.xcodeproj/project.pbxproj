@@ -24,6 +24,7 @@
 		8B002D1F26CB77D500D0DAFC /* CartPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B002D1E26CB77D500D0DAFC /* CartPageView.swift */; };
 		8B002D2126CB7E6F00D0DAFC /* CartState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B002D2026CB7E6F00D0DAFC /* CartState.swift */; };
 		8B002D2326CB9E9B00D0DAFC /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B002D2226CB9E9B00D0DAFC /* CartItem.swift */; };
+		8B002D2526CBA70200D0DAFC /* CartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B002D2426CBA70200D0DAFC /* CartButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		8B002D1E26CB77D500D0DAFC /* CartPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPageView.swift; sourceTree = "<group>"; };
 		8B002D2026CB7E6F00D0DAFC /* CartState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartState.swift; sourceTree = "<group>"; };
 		8B002D2226CB9E9B00D0DAFC /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
+		8B002D2426CBA70200D0DAFC /* CartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				8B002D1A26CB57DD00D0DAFC /* ProductListPageView.swift */,
 				8B002D1C26CB762800D0DAFC /* ProductDetailPageView.swift */,
 				8B002D1E26CB77D500D0DAFC /* CartPageView.swift */,
+				8B002D2426CBA70200D0DAFC /* CartButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			files = (
 				11FD9CA62692B3A700BBCD33 /* UserDefaults+Codable.swift in Sources */,
 				8B002D1D26CB762800D0DAFC /* ProductDetailPageView.swift in Sources */,
+				8B002D2526CBA70200D0DAFC /* CartButton.swift in Sources */,
 				8B002D1B26CB57DD00D0DAFC /* ProductListPageView.swift in Sources */,
 				1152031526A66A7500555FBE /* ContentView.swift in Sources */,
 				11FD9CB72692C4BE00BBCD33 /* RemoteImage.swift in Sources */,
