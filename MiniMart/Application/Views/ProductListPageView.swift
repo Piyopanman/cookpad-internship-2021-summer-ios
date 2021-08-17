@@ -43,7 +43,7 @@ struct ProductListPageView: View {
                 }) {
                     VStack(){
                         Image(systemName: "cart")
-                        Text("\(cartState.getCartItemCount())")
+                        Text("\(cartState.totalProductCounts)")
                     }
                 }
             }

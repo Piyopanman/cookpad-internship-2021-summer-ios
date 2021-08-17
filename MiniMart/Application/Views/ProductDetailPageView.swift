@@ -9,11 +9,10 @@ struct ProductDetailPageView: View {
         VStack(){
             RemoteImage(urlString: product.imageUrl)
                 .aspectRatio(contentMode: .fit)
-            //                .frame(maxWidth: .infinity)
             Text(product.name)
             Text("\(product.price)円")
             Text(product.summary)
-            Button(action: { cartState.addToCart(product: product)}){
+            Button(action: { cartState.add(product: product)}){
                 Text("カートに追加する")
                     .frame(maxWidth: .infinity)
                     .padding(8)
@@ -32,7 +31,7 @@ struct ProductDetailPageView: View {
                     }) {
                         VStack(){
                             Image(systemName: "cart")
-                            Text("\(cartState.getCartItemCount())")
+                            Text("\(cartState.totalProductCounts)")
                         }
                     }
                 }
